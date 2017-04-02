@@ -31,9 +31,13 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 print(sess.run(accuracy, feed_dict={x: mnist.test.images,
                                     y_: mnist.test.labels}))
+
+# tf.argmax(y,1) is the output
 prediction = tf.argmax(y, 1)
+
 print "predictions", prediction.eval(feed_dict={x: mnist.test.images},
                                      session=sess)
+
 probabilities = y
 print "probabilities", probabilities.eval(feed_dict={x: mnist.test.images},
                                           session=sess)
