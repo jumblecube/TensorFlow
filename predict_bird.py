@@ -81,6 +81,6 @@ prediction = model.predict([img])
 is_bird = np.argmax(prediction[0]) == 1
 
 if is_bird:
-    print("That's a bird!")
+    print("That's a bird!", prediction)
 else:
-    print("That's not a bird!")
+    print("That's not a bird!", prediction)
